@@ -1,0 +1,12 @@
+# Force LF line endings for all text files
+* text=auto eol=lf
+
+# IBM i source types — always text, always LF
+*.rpgle text eol=lf
+*.sqlrpgle text eol=lf
+*.clle text eol=lf
+*.clp text eol=lf
+*.dspf text eol=lf
+*.pf text eol=lf
+*.lf text eol=lf
+*.cmd text eol=lf
