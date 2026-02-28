@@ -1,0 +1,8 @@
+             PGM
+
+             DLYJOB     DLY(30)
+
+             STRSBS     SBSD(PLATSCI)
+             MONMSG     MSGID(CPF0000)
+
+ ENDSTR:     ENDPGM
