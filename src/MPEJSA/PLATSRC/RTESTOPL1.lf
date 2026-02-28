@@ -1,0 +1,58 @@
+      *---------------------------------------------------------------*
+      *                                                               *
+      *  Program Modification Index                                   *
+      *                                                               *
+      *    Date    Who    Mod    Description                          *
+      *  --------  -----  -----  -----------------------------------  *
+      *                                                               *
+      *                                                               *
+      *---------------------------------------------------------------*
+
+     A                                      DYNSLT
+     A                                      JDFTVAL
+     A          R JOINREC                   JFILE(STOPOFF ORDER +
+     A                                            CUSTMAST MCCSTLLP)
+
+      * JOIN BETWEEN ICC STOPOFF AND ORDER TABLES
+     A          J                           JOIN(STOPOFF ORDER)
+     A                                      JFLD(SOORD  ORODR#)
+
+      * JOIN BETWEEN ICC STOPOFF AND CUSTOMER MASTER TABLES
+     A          J                           JOIN(STOPOFF CUSTMAST)
+     A                                      JFLD(SOCUST CUCODE)
+
+      * JOIN BETWEEN ICC CUSTOMER MASTER AND MC LAT/LON TABLES
+     A          J                           JOIN(CUSTMAST MCCSTLLP)
+     A                                      JFLD(CUCODE C#CODE)
+      *
+     A            SOORD
+     A            SOSTP#
+     A            SOTYPE
+     A            SOCUST
+     A            SODISP
+     A            SOCTYC
+     A            SOST
+     A            SOARDT
+     A            SOARTM
+     A            SOLUDT
+     A            SOLUTM
+     A            OR#DSP                    JREF(ORDER)
+     A            ORDSP#                    JREF(ORDER)
+     A            CUNAME                    JREF(CUSTMAST)
+     A            CUBAD1                    JREF(CUSTMAST)
+     A            CUBAD2                    JREF(CUSTMAST)
+     A            CUBCTY             I      JREF(CUSTMAST) TRNTBL(QSYSTRNTBL)
+     A            CUBST              I      JREF(CUSTMAST) TRNTBL(QSYSTRNTBL)
+     A            CUBZIP                    JREF(CUSTMAST)
+     A            CUBZP2                    JREF(CUSTMAST)
+     A            C#DECLATD                 JREF(MCCSTLLP)
+     A            C#DECLOND                 JREF(MCCSTLLP)
+
+     A          K SOORD
+     A          K SOSTP#
+
+     A          S SODISP                    CMP(EQ ' ')
+      *
+     A          S ORDSP#                    CMP(GE '00')
+     A            SODISP                    CMP(EQ OR#DSP)
+
