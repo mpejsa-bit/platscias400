@@ -1,0 +1,18 @@
+      **************************************************************
+      * CONTAINER TO HOLD WORKFLOW JOB REQUESTS UNTIL FUEL STOPS   *
+      *     GENERATED, OR SEND AFTER TIMEOUT EXPIRATION.           *
+      **************************************************************
+      * ------------------------------------------------------------------*
+      *                                                                   *
+      *  CUSTOM Program Modification Index                                *
+      *                                                                   *
+      *   Date  Pgmr  Project Number ---------- Description --------------*
+      *  ------ ----- -------------- -------------------------------------*
+      * ------------------------------------------------------------------*
+     A          R RPLRETRYQ                 PFILE(PLRETRYQP)
+     A
+     A          K PLCMWJI
+     A          K PLCMWJR
+     A
+     A          S PLQTYPE                   CMP(EQ 'WFCMP')
+     A
