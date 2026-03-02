@@ -1,0 +1,13 @@
+             PGM
+             SNDMSG     MSG('got a rc-1 restarting sbs') +
+                          TOUSR(PLATSCI01)
+             SNDMSG     MSG('got a rc-1 restarting sbs') +
+                          TOUSR(PLATSCI02)
+             SBMJOB     CMD(CALL PGM(PLATRSTR)) JOB(PLATSCIR) +
+                          JOBQ(QCTL)
+             ENDSBS     SBS(PLATLSCI) OPTION(*IMMED)
+
+      /* produce hard error by calling ficticious program */
+             CALL       PGM(PLSUPPORTR)
+
+             ENDPGM
