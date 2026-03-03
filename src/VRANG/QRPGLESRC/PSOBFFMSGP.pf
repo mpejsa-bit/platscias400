@@ -1,0 +1,20 @@
+     A*============================================================
+     A* PLATSCI OUTBOUND FREEFORM MESSAGE FILE
+     A*============================================================
+     A          R PSOBFFMSGR
+     A            PSUNIT         6A         COLHDG('UNIT NUMBER')
+     A            PSDATE         7  0       COLHDG('MSG DATE')
+     A            PSTIME         6  0       COLHDG('MSG TIME')
+     A            PSMSG#         9  0       COLHDG('MSG NUMBER')
+     A            PSDRV1        10A         COLHDG('DRIVER CODE 1')
+     A            PSDRV2        10A         COLHDG('DRIVER CODE 2')
+     A            PSWUSR        10A         COLHDG('WRITE USER')
+     A            PSMTYP         2A         COLHDG('MSG TYPE')
+     A            PSMPRI        10A         COLHDG('MSG PRIORITY')
+     A            PSMSUB        50A         COLHDG('MSG SUBJECT')
+     A            PSDLNK        50A         COLHDG('DEEPLINK')
+     A            PSWRTT          Z         COLHDG('MSG WRT TIME')
+     A            PSSNDQ         1A         COLHDG('SENT TO DQ')
+     A            PSSNDT          Z         COLHDG('SENT TO DQ TIME')
+     A            PSDSTS         1A         COLHDG('DELV STATUS')
+     A            PSOMSG      5000A         COLHDG('MESSAGE')

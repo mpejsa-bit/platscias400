@@ -1,0 +1,8 @@
+     A*============================================================
+     A* PLATSCI OUTBOUND FREEFORM MESSAGE FILE
+     A*============================================================
+     A          R PSOBFFMSGR                PFILE(PSOBFFMSGP)
+     A          K PSMSG#
+     A          S PSSNDQ                    COMP(EQ ' ')
+     A            PSMTYP                    COMP(EQ 'FW')
+     A          O                           ALL

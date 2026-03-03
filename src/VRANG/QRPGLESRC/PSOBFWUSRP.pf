@@ -1,0 +1,9 @@
+     A*============================================================
+     A* PLATSCI FLEETWIDE MESSAGE AUTHORIZED USER LIST
+     A*============================================================
+     A          R PSOBFWUSRR
+     A            PSFWMSGUSR    10A         COLHDG('AUTHORIZED USER')
+     A            PSUSRFNAME    50A         COLHDG('FIRST NAME')
+     A            PSUSRLNAME    50A         COLHDG('LAST NAME')
+     A            PSADDEDDTE      Z         COLHDG('ADDED DATE')
+     A          K PSFWMSGUSR

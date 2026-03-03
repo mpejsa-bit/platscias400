@@ -1,0 +1,5 @@
+     A*============================================================
+     A* PLATSCI OUTBOUND FREEFORM MESSAGE FILE
+     A*============================================================
+     A          R PSOBFFMSGR                PFILE(PSOBFFMSGP)
+     A          K PSMSG#
