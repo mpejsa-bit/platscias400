@@ -1,9 +1,0 @@
-     A*============================================================
-     A* MOBILE COMM MESSAGE HEADER JOURNAL PROCESS FILE
-     A*============================================================
-     A          R PSMTCONFR
-     A
-     A            CONFKEY       10A         TEXT('Configuration Key')
-     A            MAXTHDCNT      3  0
-     A            CURTHDCNT      3  0
-     A          K CONFKEY

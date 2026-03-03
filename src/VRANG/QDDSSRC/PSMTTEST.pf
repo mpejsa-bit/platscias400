@@ -1,9 +1,0 @@
-     A*============================================================
-     A* MOBILE COMM MESSAGE HEADER JOURNAL PROCESS FILE
-     A*============================================================
-     A
-     A
-     A          R PSMTTESTR
-     A
-     A            WFNUM          6A         TEXT('Dispatch number')
-     A          K WFNUM
