@@ -1,9 +1,0 @@
- Data area . . . . . . . :   PLCTTRC
-   Library . . . . . . . :     *libl
- Type  . . . . . . . . . :   *CHAR
- Length  . . . . . . . . :   12
- Text  . . . . . . . . . :   Last Relative Contact Record Read for PLCNTRC
-
-            Value
- Offset      *...+....1....+....2....+....3....+....4....+....5
-     0      '000033197889'

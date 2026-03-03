@@ -1,6 +1,0 @@
-             PGM        PARM(&HOURS)
-             DCL        VAR(&OFFSET) TYPE(*char) LEN(10)
-             DCL        VAR(&hours) TYPE(*char) LEN(2)
-             RTVSYSVAL  SYSVAL(Qtimzon) RTNVAR(&OFFSET)
-             CHGVAR     VAR(&HOURS) VALUE(%SST(&offset 2 2))
-             endpgm
