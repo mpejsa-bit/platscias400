@@ -1,0 +1,51 @@
+      *---------------------------------------------------------------*
+      *---------------------------------------------------------------*
+      *---------------------------------------------------------------*
+      *---------------------------------------------------------------*
+      *                                                               *
+      *    @ Copyright Platform Science                             *
+      *                9255 towne center                            *
+      *                San Diego , CA 92121                         *
+      *                                                               *
+      * This software is licensed material of Platform Science and  *
+      * may only be used consistent with the license granted.  No   *
+      * part of this material may be reproduced, tranferred, or     *
+      * copied for any purpose without the express written permis-  *
+      * sion of Platform Science.      Copyright 2019.              *
+      *                                                               *
+      *                                                               *
+      *---------------------------------------------------------------*
+      *  Program Description                                          *
+      * Send Workflow jobs using message file.                      *
+      *
+      *  Program Modification Index
+      *
+      *    Date    Mod    Who    Description
+      *  --------  -----  -----  ------------------------------------
+      *****************************************************************
+     Fordera    if   e           k disk
+     Fload      if   e           k disk
+     Fplactdrvp if   e           k disk
+
+     D #time1          s              4s 0
+     D #time2          s              4s 0
+
+         setll *loval ordera;
+         dou %eof(ordera);
+            read ordera;
+            if not %eof(ordera) and orstat = 'D';
+               chain (orodr#:or#dsp) load;
+               if %found(load) and (didate = dietad)
+                               and  diunit > *blanks;
+                  chain didr1 plactdrvp;
+                  if %found(plactdrvp);
+                     #time1 = %int(ditime);
+                     #time2 = %int(dietat);
+                     if (#time2 - #time1 < 10);
+                        iter;
+                     endif;
+                  endif;
+               endif;
+            endif;
+         enddo;
+         *inlr = *on;
