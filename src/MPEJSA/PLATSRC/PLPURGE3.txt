@@ -1,0 +1,16 @@
+             PGM
+
+             DCL        VAR(&DAYS) TYPE(*DEC) LEN(3 0) VALUE(93)
+
+             CALL       PGM(PLTPRGMGQ) PARM(&DAYS) /* Purge records +
+                          < 93 Days */
+
+             RGZPFM     FILE(PLMSGQP) RBDACCPTH(*NO) +
+                          ALWCANCEL(*YES) LOCK(*SHRUPD) /* Reorg +
+                          Messages #1 */
+
+             RGZPFM     FILE(PLMSGQP) RBDACCPTH(*NO) +
+                          ALWCANCEL(*YES) LOCK(*SHRUPD) +
+                          FROMRCD(*PRVRGZ) /* Reorg Messages #2 */
+
+             ENDPGM

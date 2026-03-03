@@ -1,0 +1,4 @@
+             PGM
+
+             ENDSBS     SBS(PLATSCI) OPTION(*IMMED)
+             ENDPGM

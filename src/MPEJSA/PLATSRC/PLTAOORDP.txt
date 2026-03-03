@@ -1,0 +1,18 @@
+     A*============================================================
+     A* driver current active dispatch needed for updates
+     A*============================================================
+     A
+     A
+     A          R PLAOORDR
+     A
+     A            PLAOORD        7A         TEXT('All Other Msgs Order')
+     A            PLAOMTYPE      3A         TEXT('MCMSGH predefined msg#')
+     A            PLAOUNIT       6A         TEXT('UNIT to get MSGS')
+     A            PLAODATE       7S 0       TEXT('MCMSGH Date')
+     A            PLAOTIME       6S 0       TEXT('MCMSGH Time')
+     A            PLAOPRDATE      Z         TEXT('Processed Time Stamp')
+     A            PLAOPROC       1A         TEXT('Processed Y/N')
+     A            PLAORETY       3S 0       TEXT('Retry Times')
+     A          K PLAOUNIT
+     A          K PLAODATE
+     A          K PLAOTIME

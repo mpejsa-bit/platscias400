@@ -1,0 +1,24 @@
+     A*============================================================
+     A* PlatSci - Workflow Stop Continuity Log by Order, Dispatch.
+     A*============================================================
+     A
+     A          R RPLFUELCNT
+     A
+     A            PLFSCORDR      7A         TEXT('Stop Order#')
+     A                                      COLHDG('Stop Order')
+     A            PLFSCDISP      2A         TEXT('Stop Dispatch')
+     A                                      COLHDG('Stop Dispatch')
+     A            PLFSCUNIT      6A         TEXT('Stop Unit Code')
+     A                                      COLHDG('Stop Unit Code')
+     A            PLFSCDRV1      6A         TEXT('Stop Driver#1 Code')
+     A                                      COLHDG('Stop Driver#1 Code')
+     A            PLFSCDRV2      6A         TEXT('Stop Driver#2 Code')
+     A                                      COLHDG('Stop Driver#2 Code')
+     A            PLFSCDATE      7S 0       TEXT('Stop Creation Date')
+     A                                      COLHDG('Stop Creation Date')
+     A            PLFSCTIME      6S 0       TEXT('Stop Creation Time')
+     A                                      COLHDG('Stop Creation Time')
+      *
+     A          K PLFSCORDR
+     A          K PLFSCDISP
+      *

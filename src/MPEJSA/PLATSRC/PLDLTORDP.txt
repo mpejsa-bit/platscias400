@@ -1,0 +1,14 @@
+     A*============================================================
+     A* driver current active dispatch needed for updates
+     A*============================================================
+     A
+     A
+     A          R PLDLTORDR
+     A
+     A            CNORD#         7          COLHDG('DELETED ORDER#')
+     A            CNDISP         2          COLHDG('DISP#')
+     A            CNCODE         1          COLHDG('CHECK CALL TYPE')
+     A            CNDATE         7  0       COLHDG('DATE')
+     A            CNTIME         4          COLHDG('TIME')
+     A          K CNORD#
+     A          K CNDISP

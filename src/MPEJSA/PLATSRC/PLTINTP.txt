@@ -1,0 +1,45 @@
+     A*============================================================
+     A* HEART BEAT DATA  - FUEL AND LOCATION
+     A*============================================================
+     A
+     A
+     A          R PLTINTR
+     A
+     A            PLTINTTYP     10A         COLHDG('TYPE OF ACCOUNT')
+     A            PLTINTCL      10  0       COLHDG('Integrater Client ID')
+     A            PLTINTURL     50A         COLHDG('URL for Integration')
+     A            PLTINTSEC     50A         COLHDG('Secret Key')
+     A            PLTINTUSR     10A         COLHDG('Integration User')
+     A            PLTITMSGEP    50A         COLHDG('Messaging End Point')
+     A            PLTITASSEP    50A         COLHDG('Asset End Point')
+     A            PLTITOATEP    50A         COLHDG('OATH End Point')
+     A            PLTITJOBEP    50A         COLHDG('JOBS End Point')
+     A            PLTITDRVEP    50A         COLHDG('Workflow End Point')
+     A            PLTITPLNEP    50A         COLHDG('Planning End Point')
+     A            PLTDFTDLY1     5A         COLHDG('DEFAULT DELAY1')
+     A            PLTDFTDLY2     5A         COLHDG('DEFAULT DELAY2')
+     A            PLTDFTDLY3     5A         COLHDG('DEFAULT DELAY3')
+     A            PLTDFTDLY4     5A         COLHDG('DEFAULT DELAY4')
+     A            PLTDFTDLY5     5A         COLHDG('DEFAULT DELAY5')
+     A            PLTHTTPDBG     1A         COLHDG('HTTP Debug On Or Off')
+     A            PLTTEAMFLG     1A         COLHDG('Team Driver Intf')
+     A            PLTFUELFLG     1A         COLHDG('Fuel Stops Intf')
+     A            PLTFUELREQ     1A         COLHDG('Fuel Stops Reqd')
+     A            PLTRETRYMN     2A         COLHDG('Msg Retry Minutes')
+     A            PLTUPDPGM     10A         COLHDG('updated By Program')
+     A            PLTUPDTIMZ      Z         COLHDG('Time Stamp Of Update')
+     A            PLTUPDUSER    10A         COLHDG('Last User Update')
+     A            PLTITEND1     50A         COLHDG('addition EP1')
+     A            PLTITEND2     50A         COLHDG('addition EP2')
+     A            PLTITEND3     50A         COLHDG('addition EP3')
+     A            PLTITEND4     50A         COLHDG('addition EP4')
+     A            PLTITEND5     50A         COLHDG('addition EP5')
+     A            PLTITEND6     50A         COLHDG('addition EP6')
+     A            PLTITEND7     50A         COLHDG('addition EP7')
+     A            PLTITEND8     50A         COLHDG('addition EP8')
+     A            PLTITEND9     50A         COLHDG('addition EP9')
+     A            PLTITEND10    50A         COLHDG('addition EP10')
+     A
+     A          K PLTINTTYP
+     A          K PLTINTCL
+     A

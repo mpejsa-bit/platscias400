@@ -1,0 +1,31 @@
+     A*============================================================
+     A* WF MSG QUEUE
+     A*============================================================
+     A
+     A
+     A          R PLMSGQR
+     A            PLAPP          2A         TEXT('Application Code')
+     A                                      COLHDG('Application Code')
+     A            PLRECTS         Z         TEXT('Record Time Stamp')
+     A                                      COLHDG('Record Time Stamp')
+     A            PLQUETS         Z         TEXT('Queue Time Stamp')
+     A                                      COLHDG('Queue Time Stamp')
+     A            PLMSGTYP      50A         TEXT('MSG Type')
+     A                                      COLHDG('MSG Type')
+     A
+     A            PLDRVCD1       6A         TEXT('Driver Code One')
+     A                                      COLHDG('Drvr Code One')
+     A            PLDRVCD2       6A         TEXT('Driver Code Two')
+     A                                      COLHDG('Drvr Code Two')
+     A            PLUNIT         6A         TEXT('Truck #')
+     A                                      COLHDG('Truck #')
+     A            PLORDER        7A         TEXT('Order #')
+     A                                      COLHDG('Order #')
+     A            PLDISP#        2A         TEXT('Disp #')
+     A                                      COLHDG('Disp #')
+     A            PLPROC         1A         TEXT('Processed Flag')
+     A                                      COLHDG('Processed Flag')
+     A            PLPAYLOD   10000A         TEXT('Payload')
+     A                                      COLHDG('Payload')
+     A          K PLAPP
+     A          K PLPROC

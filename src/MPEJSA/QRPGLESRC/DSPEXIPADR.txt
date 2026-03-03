@@ -1,0 +1,106 @@
+/*                                                                             */
+/*   Compile the program:                                                      */
+/*                                                                             */
+/*  CRTPF FILE(QGPL/WIMI_OUT) RCDLEN(132) SIZE(*NOMAX)                         */
+/*  CRTCLPGM PGM(QGPL/DSPEXIPADR) SRCFILE(QGPL/QCLSRC) REPLACE(*YES)           */
+/*                                                                             */
+ BEGIN:      PGM
+             DCLF       FILE(QGPL/WIMI_OUT)
+             DCL        VAR(&IPADDRESS) TYPE(*CHAR) LEN(39)
+             DCL        VAR(&MSGID) TYPE(*CHAR) LEN(7) VALUE('CPF9898')
+             DCL        VAR(&MSGF) TYPE(*CHAR) LEN(10) VALUE('QCPFMSG')
+             DCL        VAR(&MSGFLIB) TYPE(*CHAR) LEN(10) +
+                          VALUE('*LIBL')
+             DCL        VAR(&MSGDTA) TYPE(*CHAR) LEN(512)
+             DCL        VAR(&MSGTYPE) TYPE(*CHAR) LEN(10) +
+                          VALUE('*COMP')
+/* */
+             MONMSG     MSGID(CPC0000 CPD0000 CPF0000 MCH0000 +
+                          QSH0000 TCP0000) EXEC(GOTO CMDLBL(ERROR))
+             RMVENVVAR  ENVVAR(QSH_USE_PRESTART_JOBS) LEVEL(*JOB)
+             MONMSG     MSGID(CPFA981) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             ADDENVVAR  ENVVAR(QSH_USE_PRESTART_JOBS) VALUE(N) +
+                          LEVEL(*JOB)
+             RMVENVVAR  ENVVAR(QIBM_QSH_CMD_OUTPUT) LEVEL(*JOB)
+             MONMSG     MSGID(CPFA981) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             ADDENVVAR  ENVVAR(QIBM_QSH_CMD_OUTPUT) VALUE(NONE) +
+                          LEVEL(*JOB)
+             RMVENVVAR  ENVVAR(QIBM_QSH_CMD_ESCAPE_MSG) LEVEL(*JOB)
+             MONMSG     MSGID(CPFA981) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             ADDENVVAR  ENVVAR(QIBM_QSH_CMD_ESCAPE_MSG) VALUE(Y) +
+                          LEVEL(*JOB)
+             OVRDBF     FILE(INPUT) TOFILE(QGPL/WIMI_IN)
+             OVRDBF     FILE(OUTPUT) TOFILE(QGPL/WIMI_OUT)
+             DLTF       FILE(QGPL/WIMI_IN)
+             MONMSG     MSGID(CPF2105) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             CRTPF      FILE(QGPL/WIMI_IN) RCDLEN(132) SIZE(*NOMAX)
+             DLTF       FILE(QGPL/WIMI_OUT)
+             MONMSG     MSGID(CPF2105) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             CRTPF      FILE(QGPL/WIMI_OUT) RCDLEN(132) SIZE(*NOMAX)
+             STRQSH     CMD('db2 "insert into qgpl.wimi_in (wimi_in) +
+                          values(''anonymous whatismyip'') with nc"')
+             MONMSG     MSGID(QSH0005 QSH0006 QSH0007) EXEC(RCVMSG +
+                          MSGTYPE(*LAST) RMV(*YES))
+             STRQSH     CMD('db2 "insert into qgpl.wimi_in (wimi_in) +
+                          values(''status'') with nc"')
+             MONMSG     MSGID(QSH0005 QSH0006 QSH0007) EXEC(RCVMSG +
+                          MSGTYPE(*LAST) RMV(*YES))
+             STRQSH     CMD('db2 "insert into qgpl.wimi_in (wimi_in) +
+                          values(''quit'') with nc"')
+             MONMSG     MSGID(QSH0005 QSH0006 QSH0007) EXEC(RCVMSG +
+                          MSGTYPE(*LAST) RMV(*YES))
+             PING       RMTSYS('170.225.15.31') MSGMODE(*QUIET *ESCAPE)
+             FTP        RMTSYS('170.225.15.31')
+             STRQSH     CMD('db2 "delete from qgpl.wimi_out where +
+                          wimi_out not like ''%211-Connected%'' +
+                          with nc"')
+             MONMSG     MSGID(QSH0005 QSH0006 QSH0007) EXEC(RCVMSG +
+                          MSGTYPE(*LAST) RMV(*YES))
+/* */
+ READIP:     RCVF
+             MONMSG     MSGID(CPF0864) EXEC(DO)
+             RCVMSG     MSGTYPE(*EXCP) RMV(*YES)
+             CHGVAR     VAR(&MSGDTA) VALUE('Your External IP Address +
+                          Is: ' || &IPADDRESS)
+             GOTO       CMDLBL(END)
+             ENDDO
+             CHGVAR     VAR(&IPADDRESS) VALUE(%SST(&WIMI_OUT 18 39))
+             GOTO       CMDLBL(READIP)
+/* */
+ ERROR:      RCVMSG     MSGTYPE(*EXCP) RMV(*YES) MSGDTA(&MSGDTA) +
+                          MSGID(&MSGID) MSGF(&MSGF) MSGFLIB(&MSGFLIB)
+             CHGVAR     VAR(&MSGTYPE) VALUE('*ESCAPE')
+             IF         COND(%SST(&MSGID 1 3) = 'QSH') THEN(CHGVAR +
+                          VAR(&MSGFLIB) VALUE('QSHELL'))
+/* */
+ END:        DLTF       FILE(QGPL/WIMI_OUT)
+             MONMSG     MSGID(CPF2105) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             DLTF       FILE(QGPL/WIMI_IN)
+             MONMSG     MSGID(CPF2105) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             RMVENVVAR  ENVVAR(QIBM_QSH_CMD_ESCAPE_MSG) LEVEL(*JOB)
+             MONMSG     MSGID(CPFA981) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             RMVENVVAR  ENVVAR(QIBM_QSH_CMD_OUTPUT) LEVEL(*JOB)
+             MONMSG     MSGID(CPFA981) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             RMVENVVAR  ENVVAR(QSH_USE_PRESTART_JOBS) LEVEL(*JOB)
+             MONMSG     MSGID(CPFA981) EXEC(RCVMSG MSGTYPE(*EXCP) +
+                          RMV(*YES))
+             DLTSPLF    FILE(*SELECT) SELECT(*CURRENT *ALL *ALL QZSHSH)
+             DLTSPLF    FILE(*SELECT) SELECT(*CURRENT *ALL *ALL +
+                          QP0ZSPWP)
+             RMVMSG     PGMQ(*ALLINACT) CLEAR(*ALL)
+             RMVMSG     CLEAR(*ALL)
+             IF         COND(&IPADDRESS = ' ') THEN(CHGVAR +
+                          VAR(&MSGDTA) VALUE('Your External IP +
+                          Address could not be determined'))
+             SNDPGMMSG  MSGID(&MSGID) MSGF(&MSGFLIB/&MSGF) +
+                          MSGDTA(&MSGDTA) MSGTYPE(&MSGTYPE)
+             ENDPGM

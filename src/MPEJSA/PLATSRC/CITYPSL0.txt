@@ -1,0 +1,33 @@
+      * ------------------------------------------------------------------*
+      *                                                                   *
+      * COPYRIGHT 2003-2019 TRIMBLE TRANSPORTATION ENTERPRISE SOLUTIONS, INC
+      *                                                                  *
+      * THIS SOFTWARE IS PROPRIETARY INFORMATION OF                      *
+      * TRIMBLE TRANSPORTATION ENTERPRISE SOLUTIONS, INC                 *
+      * AND MAY ONLY BE USED CONSISTENT WITH THE LICENSE GRANTED.        *
+      * ------------------------------------------------------------------*
+      *                                                                   *
+      *  CUSTOM Program Modification Index                                *
+      *                                                                   *
+      *   Date  Pgmr  Project Number ---------- Description --------------*
+      *  ------ ----- -------------- -------------------------------------*
+      * ------------------------------------------------------------------*
+     ** ------------------------------------------------------------------*
+     **                                                                   *
+     **  STANDARD Program Modification Index                              *
+     **                                                                   *
+     **   Date  Pgmr  Project Number ---------- Description --------------*
+     **  ------ ----- -------------- -------------------------------------*
+     **                                                                   *
+     ** ------------------------------------------------------------------*
+     A          R RCITIES                   PFILE(CITIES)
+     A            CIST
+     A            CINAME             I      TRNTBL(QSYSTRNTBL)
+     A            CICTY
+     A            CISHNM             I      TRNTBL(QSYSTRNTBL)
+     A            CILAT
+     A            CILONG
+     A            CITIME
+     A            CIDAY
+     A          K CIST
+     A          K CINAME

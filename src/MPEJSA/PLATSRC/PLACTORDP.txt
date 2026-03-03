@@ -1,0 +1,18 @@
+     A*============================================================
+     A* driver current active dispatch needed for updates
+     A*============================================================
+     A
+     A
+     A          R PLACTORDR
+     A
+     A            PLACTORD       7A         TEXT('Current Active Order')
+     A                                      COLHDG('Current Active Order')
+     A            PLACTDISP      2A         TEXT('Current Active Order')
+     A                                      COLHDG('Current Active Order')
+     A            PLDRVCODE      6A         TEXT('Driver Code to get WF')
+     A                                      COLHDG('Drvr Code to get WF')
+     A            PLMHDATE       7S 0       TEXT('MCMSGH DATE')
+     A            PLMHTIME       6S 0       TEXT('MCMSGH TIME')
+     A          K PLACTORD
+     A          K PLACTDISP
+     A          K PLDRVCODE
