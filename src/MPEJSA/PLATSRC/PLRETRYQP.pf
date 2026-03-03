@@ -1,0 +1,41 @@
+     A*============================================================*
+     A* CONTAINER TO HOLD WORKFLOW JOB REQUESTS UNTIL FUEL STOPS   *
+      *     GENERATED, OR SEND AFTER TIMEOUT EXPIRATION.           *
+     A*============================================================*
+     A
+     A          R RPLRETRYQ
+     A
+     A            PLQTYPE        5A         TEXT('Retry Message Type')
+     A                                      COLHDG('Retry Message Type')
+     A            PLCRWJU        6A         TEXT('Create WF_Job Unit')
+     A                                      COLHDG('Crt WF_Job Unit')
+     A            PLCRWJD        7S 0       TEXT('Create WF_Job Date')
+     A                                      COLHDG('Crt WF_Job Date')
+     A            PLCRWJT        6S 0       TEXT('Create WF_Job Time')
+     A                                      COLHDG('Crt WF_Job Time')
+     A            PLCNWJI       28A         TEXT('Cancel WF_Job ID')
+     A                                      COLHDG('Cnl WF_Job ID')
+     A            PLCMWJI       10A         TEXT('Complete WF_Job ID')
+     A                                      COLHDG('Cmp WF_Job ID')
+     A            PLCMWJR       30A         TEXT('Complete WF_Job Rsn')
+     A                                      COLHDG('Cmp WF_Job Rsn')
+     A            PLCRWPU        6A         TEXT('Create WF_Pln Unit')
+     A                                      COLHDG('Crt WF_Pln Unit')
+     A            PLCRWPD        7S 0       TEXT('Create WF_Pln Date')
+     A                                      COLHDG('Crt WF_Pln Date')
+     A            PLCRWPT        6S 0       TEXT('Create WF_Pln Time')
+     A                                      COLHDG('Crt WF_Pln Time')
+     A            PLCNWPO        7A         TEXT('Cancel WF_Pln Order')
+     A                                      COLHDG('Cnl WF_Pln Ordr')
+     A            PLCNWPD        6A         TEXT('Cancel WF_Pln Driver')
+     A                                      COLHDG('Cnl WF_Pln Drvr')
+     A            PLCRFFU        6A         TEXT('Create FF_Msg Unit')
+     A                                      COLHDG('Crt FF_Msg Unit')
+     A            PLCRFFD        7S 0       TEXT('Create FF_Msg Date')
+     A                                      COLHDG('Crt FF_Mgb Date')
+     A            PLCRFFT        6S 0       TEXT('Create FF_Msg Time')
+     A                                      COLHDG('Crt FF_Msg Time')
+     A            PLQSEND       26A         TEXT('Send Timeout TS')
+     A                                      COLHDG('Send Timeout TS')
+     A          K PLQTYPE
+     A

@@ -1,0 +1,38 @@
+     A*============================================================
+     A* MOBILE COMM MESSAGE HEADER JOURNAL PROCESS FILE
+     A*============================================================
+     A
+     A
+     A          R PLJRNCTLR
+     A
+     A            PLJPROCESS    10A         TEXT('Entity to be Processed')
+     A                                      COLHDG('Entity to Process')
+     A            PLJJRNL       10A         TEXT('Name of Journal')
+     A                                      COLHDG('Name of Journal')
+     A            PLJLIBL       10A         TEXT('Library Journal resides in')
+     A                                      COLHDG('Libl of Journal')
+     A            PLJFILE       10A         TEXT('File Being Journaled')
+     A                                      COLHDG('File Being Jrnld')
+     A            PLJFLIBL      10A         TEXT('Library of file be journaled')
+     A                                      COLHDG('Lib of File Jrnld')
+     A            PLJEXITPGM    10A         TEXT('Exit Program to be called')
+     A                                      COLHDG('Exit Pgm')
+     A            PLJEXITLIB    10A         TEXT('Exit Program Libl')
+     A                                      COLHDG('Exit Pgm Libl')
+     A            PLJLSTDT       8  0       TEXT('Last Date Processed')
+     A                                      COLHDG('Last Date ')
+     A            PLJLSTTM       6  0       TEXT('Last Time Processed')
+     A                                      COLHDG('Last Time')
+     A            PLJJRNDLY      4  0       TEXT('Delay time between journal-
+     A                                             rcv changes')
+     A                                      COLHDG('Delay Time ')
+     A            PLJEXTR1      10  2
+     A            PLJEXTR2      11  5
+     A            PLJEXTR3      20A
+     A            PLJEXTR4      50A
+     A            PLJEXTR5      10A
+     A            PLJEXTR6      10A
+     A            PLJEXTR7       1A
+     A            PLJEXTR8       1A
+     A            PLJEXTR9       1A
+     A          K PLJPROCESS

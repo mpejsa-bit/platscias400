@@ -1,0 +1,21 @@
+     A*============================================================
+     A* Preplan/Unplan messages
+     A*============================================================
+     A
+     A          R PLPPORDR
+     A
+     A            PLPPORD        7A         TEXT('PP Order#')
+     A            PLPPTYPE       2A         TEXT('PP Type PP or UP')
+     A            PLPPUNIT       6A         TEXT('Truck Code to get PP')
+     A            PLPPDRV1       6A         TEXT('Driver Code #1 to get PP')
+     A            PLPPDRV2       6A         TEXT('Driver Code #2 to get PP')
+     A            PLPPDATE       7S 0       TEXT('OPPLAN Date')
+     A            PLPPTIME       6S 0       TEXT('OPPLAN Time')
+     A            PLPPPRDATE      Z         TEXT('Processed Time Stamp')
+     A            PLPPPROC       1A         TEXT('Processed Y/N')
+     A            PLPPRETY       3S 0       TEXT('Retry Times')
+     A
+     A          K PLPPUNIT
+     A          K PLPPDATE
+     A          K PLPPTIME
+     A

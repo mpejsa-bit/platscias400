@@ -1,0 +1,37 @@
+     A*============================================================
+     A* PlatSci - Workflow Stop records by Order, Dispatch, Stop#.
+     A*============================================================
+     A
+     A          R RPLWRKSTP
+     A
+     A            PLSTPORDR      7A         TEXT('Stop Order#')
+     A                                      COLHDG('Stop Order')
+     A            PLSTPDISP      2A         TEXT('Stop Dispatch')
+     A                                      COLHDG('Stop Dispatch')
+     A            PLSTPUNIT      6A         TEXT('Stop Unit Code')
+     A                                      COLHDG('Stop Unit Code')
+     A            PLSTPDRV1      6A         TEXT('Stop Driver#1 Code')
+     A                                      COLHDG('Stop Driver#1 Code')
+     A            PLSTPDRV2      6A         TEXT('Stop Driver#2 Code')
+     A                                      COLHDG('Stop Driver#2 Code')
+     A            PLSTPNUMB      2S 0       TEXT('Stop Number')
+     A                                      COLHDG('Stop Number')
+     A            PLSTPCUST      6A         TEXT('Stop Customer Code')
+     A                                      COLHDG('Stop Customer Code')
+     A            PLSTPNAME     30A         TEXT('Stop Customer Name')
+     A                                      COLHDG('Stop Customer Name')
+     A            PLSTPLATD      9S 6       TEXT('Stop Customer LatD')
+     A                                      COLHDG('Stop Customer LatD')
+     A            PLSTPLOND      9S 6       TEXT('Stop Customer LonD')
+     A                                      COLHDG('Stop Customer LonD')
+     A            PLSTPDATE      7S 0       TEXT('Stop Creation Date')
+     A                                      COLHDG('Stop Creation Date')
+     A            PLSTPTIME      6S 0       TEXT('Stop Creation Time')
+     A                                      COLHDG('Stop Creation Time')
+     A            PLSTPCMPL     20A         TEXT('Stop Completion Type')
+     A                                      COLHDG('Stop Completion Type')
+      *
+     A          K PLSTPORDR
+     A          K PLSTPDISP
+     A          K PLSTPNUMB
+      *

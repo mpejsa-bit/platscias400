@@ -1,0 +1,13 @@
+             PGM        PARM(&FILEN)
+             DCL        VAR(&FILEN) TYPE(*CHAR) LEN(10)
+             DCL        VAR(&DIRN) TYPE(*CHAR) LEN(19)
+             CHGVAR     VAR(&DIRN) VALUE('/platsci/' *CAT +
+                          &FILEN)
+             CRTDIR     DIR(&DIRN)
+             MONMSG     MSGID(CPFA0A0) EXEC(GOTO CMDLBL(ENDCPY))
+             MONMSG     MSGID(CPFA09E) EXEC(GOTO CMDLBL(ENDCPY))
+
+             CPY        OBJ('/tmp/httpapi_debug.txt') TODIR(&DIRN)
+             MONMSG     MSGID(CPFA09E) EXEC(GOTO CMDLBL(ENDCPY))
+
+ ENDCPY:     ENDPGM

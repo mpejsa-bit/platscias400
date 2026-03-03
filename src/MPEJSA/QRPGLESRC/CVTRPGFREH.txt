@@ -1,0 +1,551 @@
+:pnlgrp.
+.************************************************************************
+.*  Help for command CVTRPGFREE
+.************************************************************************
+:help name='CVTRPGFREE'.
+Convert RPG/ILE to Free-form - Help
+:p.The Convert RPG/ILE to Free-form (CVTRPGFREE) command converts fixed-
+format RPG/ILE source to free-format RPG wherever possible.
+:ul.
+:li.
+Conversion is non-destructive: converted source must be output to a different
+member to the input member.
+:li.
+Conversion can be run over either a single member or all members of a source
+physical file.
+:li.
+A report is produced for each run of the command, listing the source members
+converted and the conversion ratio achieved.
+:eul.
+:ehelp.
+.*******************************************
+.*   Help for parameter FROMMBR
+.*******************************************
+:help name='CVTRPGFREE/FROMMBR'.
+From member (FROMMBR) - Help
+:xh3.From member (FROMMBR)
+:p.Specifies the source member containing the fixed-format RPG source to
+be converted.
+.* Describe the function provided by the parameter.
+:p.This is a required parameter.
+:parml.
+:pt.:pk.*ALL:epk.
+:pd.
+Use this special value to convert all source members within the specified
+source physical file.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pv.name:epv.
+:pd.
+Specify the name of the source member to be converted,
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter FROMFILE
+.*******************************************
+:help name='CVTRPGFREE/FROMFILE'.
+From file (FROMFILE) - Help
+:xh3.From file (FROMFILE)
+:p.Specifies the name of the source physical file holding the source
+member(s) to be converted.
+.* Describe the function provided by the parameter.
+:p.:hp2.Qualifier 1: From file:ehp2.
+:parml.
+:pt.:pk def.QRPGLESRC:epk.
+:pd.
+Look for the source member(s) to converted in a source physical file called QRPGLESRC.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pv.name:epv.
+:pd.
+Specify the name of the source physical file containing the source
+member(s) to be converted.
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:p.:hp2.Qualifier 2: Library:ehp2.
+:parml.
+:pt.:pk.*CURLIB:epk.
+:pd.
+Use the specified source physical file in the current library.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.*LIBL:epk.
+:pd.
+Use the first source physical file with the specified name found in the
+library list.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pv.name:epv.
+:pd.
+Specify the name of the library containing the source physical file which
+contains the source member(s) to be converted.
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter TOFILE
+.*******************************************
+:help name='CVTRPGFREE/TOFILE'.
+To file (TOFILE) - Help
+:xh3.To file (TOFILE)
+:p.Specifies the name of the source physical file to be used to hold the converted source
+member(s).
+.* Describe the function provided by the parameter.
+:p.:hp2.Qualifier 1: To file:ehp2.
+:parml.:pt.:pk def.QRPGLESRC:epk.
+:pd.
+Output the converted source member(s) to a source physical file called QRPGLESRC.
+.* Describe the function provided by the default parameter value.
+:pt.:pv.name:epv.
+:pd.
+Specify the name of the source physical file to output the converted source
+member(s) to.
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:p.:hp2.Qualifier 2: Library:ehp2.
+:parml.
+:pt.:pk def.*FROMLIB:epk.
+:pd.
+Output to a source physical file in the same library as the library holding the source
+being converted from.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.*CURLIB:epk.
+:pd.
+Output converted source to the specified source physical file in the current library.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.*LIBL:epk.
+:pd.
+Output converted source to the first source physical file with the specified name found in the
+library list.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pv.name:epv.
+:pd.
+Specify the name of the library containing the source physical file into which
+the converted source member(s) will be output.
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter TOMBR
+.*******************************************
+:help name='CVTRPGFREE/TOMBR'.
+To member (TOMBR) - Help
+:xh3.To member (TOMBR)
+:p.Specifies the name of the source member into which converted source is to be output.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.*FROMMBR:epk.
+:pd.
+Output converted source to a member of the same name as the member being converted from.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pv.name:epv.
+:pd.
+Specify the name of the source member to be used to output the converted source to.
+.* Describe the function provided by the user-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter CNVFULL
+.*******************************************
+:help name='CVTRPGFREE/CNVFULL'.
+Convert to fully-free? (CNVFULL) - Help
+:xh3.Convert to fully-free? (CNVFULL)
+:p.Specifies whether to output the conversion in fully-free format (source starts in position
+1, used the full-width and does not use line markers).
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk.Y:epk.
+:pd.
+Output converted source as fully-free source.  Source will start in position 1.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.N:epk.
+:pd.
+Do not output in fully-free format.  Source will start in position 8 and existing line markers
+will be retained.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter RTNLINMKR
+.*******************************************
+:help name='CVTRPGFREE/RTNLINMKR'.
+Retain line markers? (RTNLINMKR) - Help
+:xh3.Retain line markers? (RTNLINMKR)
+:p.Specifies whether or not to retain existing line markers (comments in positions 1 to 6).
+:p.This parameter is only valid if CNVFUL parameter is set to 'Y'.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk.Y:epk.
+:pd.
+Retain any existing line markers found.  Line markers will be moved to the far right
+of the source line.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.N:epk.
+:pd.
+Line markers are not retained and will not be present in the converted source.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter INDINC
+.*******************************************
+:help name='CVTRPGFREE/INDINC'.
+Indentation increment (INDINC) - Help
+:xh3.Indentation increment (INDINC)
+:p.Specifies the number of spaces used to indent source structures.
+:ehelp.
+.*******************************************
+.*   Help for parameter INDCMT
+.*******************************************
+:help name='CVTRPGFREE/INDCMT'.
+Indent comments? (INDCMT) - Help
+:xh3.Indent comments? (INDCMT)
+:p.Specifies whether comments in the fixed-format code should be indented to the same
+level as the re-formatted fre--format code.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+Comments will be indented to the same level as the code which they preface, so that the
+comments appear to 'follow' the code.
+:p.
+Using this option usually results in the code being much clearer and easier to follow.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+Comments are not indented.  They will stay left-aligned.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter RETBLKCMT
+.*******************************************
+:help name='CVTRPGFREE/RETBLKCMT'.
+Retain blank comment markers? (RETBLKCMT) - Help
+:xh3.Retain blank comment markers? (RETBLKCMT)
+:p.Developers frequently use blank comment lines to break up the code.
+:p.
+Conversion would normally retain these lines, complete with the comment marker (//).
+:p.
+Use this option to specify whether or not the comment marker itself (//) is to be kept.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk.Y:epk.
+:pd.
+The comment marker is retained.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.N:epk.
+:pd.
+The comment marker is removed, leaving a completely blank line.
+:p.
+Using this option usually results in the code being much clearer and easier to follow.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter RMVCMTEND
+.*******************************************
+:help name='CVTRPGFREE/RMVCMTEND'.
+Remove comment end markers? (RMVCMTEND) - Help
+:xh3.Remove comment end markers? (RMVCMTEND)
+:p.Developers frwquently enter comments in a block, and use comment markers (*) at
+the end of the line, which results in the appearance of a comment 'box'.
+:p.
+Over-use of this style can result in code appearing cluttered, and often the end
+markers end up being mis-aligned due to rushed editing, again resulting in untidy-
+looking code.
+:p.
+This parameter specifies whether or not to keep the comment marker being used to
+define such a 'box'.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+The comment end marker will be retained, but will be conmverted to //.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+The comment end marker will be removed.
+:p.
+Using this option usually results in much cleaner looking code.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter RMVNONPRT
+.*******************************************
+:help name='CVTRPGFREE/RMVNONPRT'.
+Remove non-printable chars? (RMVNONPRT) - Help
+:xh3.Remove non-printable chars? (RMVNONPRT)
+:p.Specifies whether or not to remove non-printable characters from the source.
+:p.Developers using SEU frequently use special hex coded characters to change the
+highlighting and colouring of source lines.  These characters are unprintable.
+:p.
+Modern editors such as the LPEX editor in RDi and VS Code use syntax highlighting by
+default, making the use of these non-printable characters redundant.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+Removes the non-printable characters from the source.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+Retains the non-printable characters for backward-compatibility with SEU.
+:p.
+This option is not recommended.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter DIRECTIVES
+.*******************************************
+:help name='CVTRPGFREE/DIRECTIVES'.
+Use /Free compiler directives? (DIRECTIVES) - Help
+:xh3.Use /Free compiler directives? (DIRECTIVES)
+:p.Specifies whether to use /Free and /End-Free compiler directives when switching
+between fixed-format code and free-format code.
+:p.Note that the need for these directives was removed in V6R1 and the compiler now
+ignores them.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk.Y:epk.
+:pd.
+Generate a /Free or /End-Free when switching between fixed-format and free-format code.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.N:epk.
+:pd.
+Omit all /Free and /End-Free compiler directive.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter CNVMOVE
+.*******************************************
+:help name='CVTRPGFREE/CNVMOVE'.
+Convert MOVE statements? (CNVMOVE) - Help
+:xh3.Convert MOVE statements? (CNVMOVE)
+:p.Specifies whether or not to attempt to convert MOVE statements.
+:p.Fixed-format RPG permits the ability to use the MOVE opcode to move values
+between variables of different types and lengths, with the movement of character
+values being performed starting with the right-hand side of the variables.
+:p.Free-format, on the other hand, does NOT permit the movement of values between
+variables of different types, making the conversion of MOVE statements rather prone
+to error.
+:p.CVTRPGFREE will attempt to convert MOVE statements under the following circumstances:
+:ul.
+:li.The opcode is a MOVE and the (P) extender has been used.
+:li.The opcode is a MOVEL and the (P) extender has been used,
+:li.Factor1 is blank and Factor2 is one of: *BLANK, *BLANKS, *ZERO, *ZEROS, *ON, *OFF.
+:eul.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+Attempt to convert MOVE/MOVEL statement as per the above.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+MOVE statements are not converted, and are left as fixed-format lines.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter CNVKLIST
+.*******************************************
+:help name='CVTRPGFREE/CNVKLIST'.
+Convert Key Lists? (CNVKLIST) - Help
+:xh3.Convert Key Lists? (CNVKLIST)
+:p.Specifies whether or not to convert key lists to in-line lists of fields on file
+operations.
+:p.While key lists in fixed-format have a corresponding feature in free-format in the
+form of Key Datastructures, they are no longer needed as file operations in free-format
+permit the specification of the list of fields to be used for the file operation.
+:p.CVTRPGFREE avoids the use of Key Datastructures, and instead, amends all file
+operations to use a list of fields.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+Converts key lists, replacing all references on file operations with a list of separate
+variables.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+Key lists are not converted and file operations continue to reference the key lists.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter RETKLIST
+.*******************************************
+:help name='CVTRPGFREE/RETKLIST'.
+Retain converted Key Lists? (RETKLIST) - Help
+:xh3.Retain converted Key Lists? (RETKLIST)
+:p.Specifies whether or not to retain the original Key List code for reference.
+:p.Retained code will be commented out.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+The original key lists will be kept but commented out.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+The original key lists will be omitted from the converted source.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter CNVPLIST
+.*******************************************
+:help name='CVTRPGFREE/CNVPLIST'.
+Convert Parameter Lists? (CNVPLIST) - Help
+:xh3.Convert Parameter Lists? (CNVPLIST)
+:p.Specifies whether or not to convert parameter lists to prototype definitions,
+and program calls to free-format.
+:p.Parameter lists and parameters on program calls can be converted to prototype
+definitions, and program calls are converted to free-format, with all specified
+parameters defined on the CALL.
+:p.Input values are loaded to the relevant parameters prior to the CALL, and output
+values are extracted from the relevant parameters after the CALL.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+Convert parameter lists to prototype definitions.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+Parameter lists and program calls are not converted and are left as fixed-format
+code.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter RETPLIST
+.*******************************************
+:help name='CVTRPGFREE/RETPLIST'.
+Retain converted Parm Lists? (RETPLIST) - Help
+:xh3.Retain converted Parm Lists? (RETPLIST)
+:p.Specifies whether or not to retain the original parameter list and program
+call code for reference.
+:p.Retained code will be commented out.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk def.Y:epk.
+:pd.
+Parameter lists are converted to prototype definitions.
+:p.
+The original parameter lists and program calls will be kept but commented out.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.N:epk.
+:pd.
+The original parameter lists and program calls will be omitted from the converted source.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter SUPCNVMSGS
+.*******************************************
+:help name='CVTRPGFREE/SUPCNVMSGS'.
+Suppress conversion messages? (SUPCNVMSGS) - Help
+:xh3.Suppress conversion messages? (SUPCNVMSGS)
+:p.Specifies whether or not to suppress conversion error messages which are
+generated in the converted source for those lines which could not be converted.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk.Y:epk.
+:pd.
+Conversion error messages will not be generated in the converted source.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.N:epk.
+:pd.
+Conversion error messages will be generated for lines which cannot be converted.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter OPCODECASE
+.*******************************************
+:help name='CVTRPGFREE/OPCODECASE'.
+Op-code case (OPCODECASE) - Help
+:xh3.Op-code case (OPCODECASE)
+:p.All opcodes processed by the conversion are converted to a standard case representation.
+:p.See the optins below for examples.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk.*UPPER:epk.
+:pd.
+Converts all opcodes to upper case.
+:p.e.g. for/endfor will become FOR/ENDFOR
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk.*LOWER:epk.
+:pd.
+Converts all opcodes to lower case.
+:p.e.g. FOR/ENDFOR will become for/endfor
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.*MIXED:epk.
+:pd.
+Converts all opcodes to a mixed-case standard.
+:p.e.g. for/endfor will become For/EndFor
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.*******************************************
+.*   Help for parameter LOGCNV
+.*******************************************
+:help name='CVTRPGFREE/LOGCNV'.
+Log conversion? (LOGCNV) - Help
+:xh3.Log conversion? (LOGCNV)
+:p.Specifies whether or not to log the conversion in the conversion log table
+CVTRPGLOG.
+.* Describe the function provided by the parameter.
+:parml.
+:pt.:pk.Y:epk.
+:pd.
+The conversion will be logged in the conversion log table.
+.* Describe the function provided by the pre-defined parameter value.
+:pt.:pk def.N:epk.
+:pd.
+The conversion will not be logged in the conversion log table.
+.* Describe the function provided by the pre-defined parameter value.
+:eparml.
+:ehelp.
+.**************************************************
+.*
+.* Error messages for CVTRPGFREE
+.*
+.**************************************************
+:help name='CVTRPGFREE/ERROR/MESSAGES'.
+&msg(CPX0005,QCPFMSG). CVTRPGFREE - Help
+:xh3.&msg(CPX0005,QCPFMSG). CVTRPGFREE
+:p.:hp3.*ESCAPE &msg(CPX0006,QCPFMSG).:ehp3.
+.************************************************************************
+.* List the *ESCAPE, *STATUS, and *NOTIFY messages signalled from the command.
+.* The following are generic messages defined in message file QCPFMSG.
+.* Modify this list to match the list of error messages for the command.
+.************************************************************************
+:DL COMPACT.
+:DT.CPF9801
+:DD.&MSG(CPF9801,QCPFMSG,*LIBL,nosub).
+:DT.CPF9802
+:DD.&MSG(CPF9802,QCPFMSG,*LIBL,nosub).
+:DT.CPF9803
+:DD.&MSG(CPF9803,QCPFMSG,*LIBL,nosub).
+:DT.CPF9807
+:DD.&MSG(CPF9807,QCPFMSG,*LIBL,nosub).
+:DT.CPF9808
+:DD.&MSG(CPF9808,QCPFMSG,*LIBL,nosub).
+:DT.CPF9810
+:DD.&MSG(CPF9810,QCPFMSG,*LIBL,nosub).
+:DT.CPF9811
+:DD.&MSG(CPF9811,QCPFMSG,*LIBL,nosub).
+:DT.CPF9812
+:DD.&MSG(CPF9812,QCPFMSG,*LIBL,nosub).
+:DT.CPF9820
+:DD.&MSG(CPF9820,QCPFMSG,*LIBL,nosub).
+:DT.CPF9830
+:DD.&MSG(CPF9830,QCPFMSG,*LIBL,nosub).
+:DT.CPF9899
+:DD.&MSG(CPF9899,QCPFMSG,*LIBL,nosub).
+:EDL.
+:ehelp.
+:epnlgrp.

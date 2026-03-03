@@ -1,0 +1,21 @@
+             PGM
+             ADDLIBLE   LIB(MAILTOOL)
+             MAILTOOL   TOADDR('7043098401@vtext.com' +
+                          '2532520797@tmomail.net' +
+                          '7067673477@vtext.com') +
+                          FROMADDR('PlatSci@M-V-T.com') +
+                          SUBJECT(PlatSci) MESSAGE(' subsytem had +
+                          an error and is restarting')
+             SNDMSG     MSG('got a rc-1 restarting sbs') +
+                          TOUSR(PLATSCI01)
+             SNDMSG     MSG('got a rc-1 restarting sbs') +
+                          TOUSR(PLATSCI02)
+             SBMJOB     CMD(CALL PGM(PLERREND)) JOB(PLATSCIR) +
+                          JOBQ(QCTL)
+             SBMJOB     CMD(CALL PGM(PLERRSTR)) JOB(PLATSCIR) +
+                          JOBQ(QCTL)
+
+      /* produce hard error by calling ficticious program */
+      /*     CALL       PGM(PLSUPPORTR)   */
+
+             ENDPGM

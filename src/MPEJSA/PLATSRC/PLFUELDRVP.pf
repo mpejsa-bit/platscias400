@@ -1,0 +1,9 @@
+     A*============================================================
+     A* LIST OF ACTIVE DRIVERS TO TEST FUEL STOPS
+     A*============================================================
+     A
+     A          R PLFUELDRVR
+     A
+     A            PLFUELCDE      6A         COLHDG('Drvr test Fuel Stops')
+     A          K PLFUELCDE
+     A

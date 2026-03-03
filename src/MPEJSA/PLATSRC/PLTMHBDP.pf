@@ -1,0 +1,38 @@
+     A*============================================================
+     A* HEART BEAT DATA  - FUEL AND LOCATION
+     A*============================================================
+     A
+     A
+     A          R PLTMHBDR
+     A
+     A            PLTHTRUCK     10A         COLHDG('Truck Number')
+     A            PLTHHBID      25A         COLHDG('HB ID#')
+     A            PLTHTYPE      25A         COLHDG('Event Type')
+     A            PLTHRECV        Z         COLHDG('RECEIVED AT')
+     A            PLTHLOGA      20A         COLHDG('Logged At')
+     A            PLTHSPEED      5  2       COLHDG('Speed')
+A001 A            PLTHODO       11  2       COLHDG('Odometer')
+     A            PLTHODOJ       1A         COLHDG('Odometer Jump')
+     A            PLTHHEAD       3  0       COLHDG('Heading')
+     A            PLTHIGNS       5A         COLHDG('Ignition')
+     A            PLTHRPM        5  0       COLHDG('RPM')
+A001 A            PLTHENGH      11  2       COLHDG('Engine Hours')
+     A            PLTHENGHJ      1A         COLHDG('Engine Hours Jump')
+     A            PLTHWINM       5A         COLHDG('Wheels In Motion')
+     A            PLTHACU        1A         COLHDG('Accuracy')
+     A            PLTHSAT        3  0       COLHDG('Satellites')
+     A            PLTHGPSV       5A         COLHDG('GPS valid')
+     A            PLTHHDOP       4A         COLHDG('HDOP')
+     A            PLTHFUEL       4  1       COLHDG('Fuel Level')
+A001 A            PLTHFUELU     11  2       COLHDG('Total Fuel Used')
+     A            PLTHLAT        9  6       COLHDG('Latitude')
+     A            PLTHLON        9  6       COLHDG('Longitude')
+     A            PLTHLOCD      50A         COLHDG('Location Description')
+     A            PLTHRPD        5  0       COLHDG('REL Position Dist')
+     A            PLTHRUM        2A         COLHDG('REL Position UM')
+     A            PLTHRDIR       3A         COLHDG('REL Position DIR')
+     A            PLTHRCITY     25A         COLHDG('REL Position City')
+     A            PLTHRSTATE     2A         COLHDG('REL Position State')
+     A            PLTHRCUNTR     3A         COLHDG('REL Position Country')
+     A          K PLTHTRUCK
+     A          K PLTHLOGA
