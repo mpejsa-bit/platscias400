@@ -1,6 +1,0 @@
-             PGM
-
-             SBMJOB     CMD(CALL PGM(PLPURGE2)) JOB(PLPURGE) +
-                          JOBQ(PLATSCI/PLATSCI)
-
-             ENDPGM

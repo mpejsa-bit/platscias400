@@ -1,9 +1,0 @@
-     A*=======================================
-     A* SCOP AND ASSOCIATED BEARER TOKEN
-     A*=======================================
-     A          R PLSCOPER
-     A
-     A            PLTSCOPE      30A         COLHDG('SCOPE')
-     A            PLTTOKEN    1224          COLHDG('BEARER TOKEN')
-     A            PLTSCDT         Z         COLHDG('BEARER ADDED ON DATE')
-     A          K PLTSCOPE

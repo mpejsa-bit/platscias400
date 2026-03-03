@@ -1,9 +1,0 @@
-     A*============================================================
-     A* LIST OF ACTIVE DRIVERS TO PROCESS WF JOBS
-     A*============================================================
-     A
-     A
-     A          R PLNAVDRVR
-     A
-     A            PLNAVCODE      6A         COLHDG('Drvr Code to get NAV')
-     A          K PLNAVCODE
